@@ -14,15 +14,15 @@ const Footer = () => {
           <h3>Contact Information</h3>
           <div className="contact-item">
             <FaPhone className="icon" />
-            <p><a href="tel:1234567890">+1 (234) 567-890</a></p>
+            <p><a href="tel:9344843492">+91 9344843492</a></p>
           </div>
           <div className="contact-item">
             <FaPhone className="icon" />
-            <p><a href="tel:1234567890">+1 (234) 567-890</a> (Support)</p>
+            <p><a href="tel:044-46133361">044-46133361</a> (Support)</p>
           </div>
           <div className="contact-item">
             <FaMapMarkerAlt className="icon" />
-            <p>123 Business Avenue, Suite 200, City, State 12345</p>
+            <p>No.2/545, Rajeshwari Nagar, Poonamallee, Chennai-6000056.</p>
           </div>
         </div>
         
@@ -32,7 +32,7 @@ const Footer = () => {
             <a href="mailto:example@mail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
               <FaEnvelope />
             </a>
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <a href="https://wa.me/9344843492" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <FaWhatsapp />
             </a>
             <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -43,7 +43,7 @@ const Footer = () => {
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Your Company Name. All Rights Reserved.</p>
+        <p>&copy; {new Date().getFullYear()} SRV Developers. All Rights Reserved.</p>
         <div className="footer-links">
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Service</a>
