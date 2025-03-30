@@ -22,7 +22,7 @@ const Pricing = () => {
               <tr>
                 <td>Plots</td>
                 <td>787 Sq-Ft - 932 Sq-Ft</td>
-                <td ><p className="rupees"><LiaRupeeSignSolid />2000/SqFt</p></td>
+                <td ><p className="rupees"><LiaRupeeSignSolid />1400/SqFt</p></td>
                 <td>
                   <button>  
                     <a href="https://wa.me/919994459458" className="enquire-btn">
@@ -33,7 +33,7 @@ const Pricing = () => {
               <tr>
                 <td>Plots</td>
                 <td>1000 Sq-Ft - 1800 Sq-Ft</td>
-                <td><p className="rupees"><LiaRupeeSignSolid />2000/SqFt</p></td>
+                <td><p className="rupees"><LiaRupeeSignSolid />1400/SqFt</p></td>
                 <td>
                   <button>  
                     <a href="https://wa.me/919994459458" className="enquire-btn">
