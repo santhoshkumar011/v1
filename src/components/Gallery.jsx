@@ -48,7 +48,7 @@ const Gallery = () => {
 
   return (
     <section id="Gallery">
-      <h2>GALLERY</h2>
+      <h2>HIGHLIGHTS</h2>
       
       <div className="accordion-container">
         {images.map((image, index) => (
