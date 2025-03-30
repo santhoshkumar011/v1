@@ -43,7 +43,7 @@ const Navbar = () => {
       <ul className={`navbar-menu ${mobileMenuOpen ? "active" : ""}`}>
         <li>
           <Link 
-            to="AboutArea" 
+            to="AboutParandur" 
             smooth={true} 
             offset={-90} 
             duration={500}
@@ -54,7 +54,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link 
-            to="AboutPlot" 
+            to="AboutMegacity" 
             smooth={true} 
             offset={-90} 
             duration={600}
