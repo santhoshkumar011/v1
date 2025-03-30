@@ -53,15 +53,15 @@ const Main = () => {
     <section id="Main">
       <div className="main">
         <div className="plot-details">
-          <h2>CODE NAME PARANDUR</h2>
+          <h2>AIRPORT MEGACITY</h2>
           <p>
             <MdConnectingAirports className="flight" />
             Near International Airport <span> </span>
             <FaHouse /> Villa Plots
           </p>
-          <p>1800 Sq Ft Plots Starting from ₹2000/ Sq Ft Onwards</p>
-          <button onClick={() => window.location.href = "tel:1234567890"}>
-  Phone Number
+          <p>1800 Sq Ft Plots Starting from ₹1400/Sq Ft Onwards</p>
+          <button onClick={() => window.location.href = "tel:9344843492"}>
+  Call Now
 </button>
         </div>
 
