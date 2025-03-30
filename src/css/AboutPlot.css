@@ -1,0 +1,175 @@
+/* .main-plot{
+    background-color: white;
+    width:100%;
+    height:auto;
+    display:flex;
+
+}
+.abt-plt{
+    text-align:center;
+    padding:20px;
+    font-size: 35px;
+}
+.main-plot-content{
+    margin-left:120px;
+    margin-top: 40px;
+    flex-basis:40%;
+    margin-right:60px;
+    font-size:20px
+}
+.plot-img img{
+    margin-top:20px;
+    width:350px;
+    height:350px;
+    margin-left:20%;
+    flex-basis:40%;
+    margin-bottom:40px;
+    border-radius: 50%;
+}
+.plot-img img{
+    cursor:pointer;
+}
+.main-plot-content button{
+    padding:10px;
+    border-radius: 10px;
+    margin-top:20px;
+    margin-left:140px
+}
+.main-plot-content button{
+    cursor:pointer;
+}
+
+
+ */
+
+ .main-plot {
+    background-color: white;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.abt-plt {
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #333;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.abt-plt::after {
+    content: "";
+    display: block;
+    width: 180px;
+    height: 3px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    margin: 15px auto 0;
+    border-radius: 3px;
+}
+
+.main-plot-content {
+    flex-basis: 50%;
+    padding: 0 30px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.plot-img {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plot-img img {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plot-img img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.main-plot-content button {
+    padding: 12px 24px;
+    border-radius: 30px;
+    margin-top: 25px;
+    background: linear-gradient(90deg, #cb8d11, #ddf484);
+    color: white;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.main-plot-content button:hover {
+    color:white;
+    transform: translateY(-3px);
+    cursor:pointer;
+    box-shadow: 0 6px 15px rgba(106, 17, 203, 0.2);
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 992px) {
+    .main-plot {
+        padding: 30px 15px;
+    }
+    
+    .main-plot-content, .plot-img {
+        flex-basis: 100%;
+        text-align: center;
+    }
+    
+    .plot-img {
+        order: -1;
+        margin-bottom: 30px;
+    }
+    
+    .plot-img img {
+        width: 280px;
+        height: 280px;
+        margin: 0 auto;
+    }
+    
+    .main-plot-content button {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .abt-plt {
+        font-size: 1.8rem;
+        padding: 15px 10px;
+    }
+    
+    .main-plot-content {
+        padding: 0 15px;
+        font-size: 1rem;
+    }
+    
+    .plot-img img {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .main-plot-content button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}

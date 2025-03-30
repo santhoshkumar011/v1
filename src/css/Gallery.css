@@ -1,0 +1,361 @@
+#Gallery {
+  background: linear-gradient(135deg, rgb(160, 237, 218), rgb(92, 97, 139));
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#Gallery::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4), transparent 70%);
+  pointer-events: none;
+}
+
+h2 {
+  text-align: center;
+  padding: 20px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, #efe58a, #d58c39);
+  margin: 15px auto 0;
+  border-radius: 3px;
+}
+
+.accordion-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 550px;
+  position: relative;
+  z-index: 2;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.accordion-item {
+  height: 500px;
+  flex: 0 0 130px;
+  overflow: hidden;
+  transition: flex 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  transform: translateY(0);
+  transition: flex 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.3s ease,
+              box-shadow 0.3s ease;
+  min-width: 90px;
+}
+
+.accordion-item.active {
+  flex: 0 0 600px;
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.accordion-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.accordion-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+  border-radius: 16px;
+}
+
+.accordion-item:hover,
+.accordion-item.active {
+  cursor: pointer;
+}
+
+.accordion-item.active .accordion-image,
+.accordion-item:hover .accordion-image {
+  transform: scale(1.05);
+}
+
+/* Vertical title (shown on collapsed items) */
+.vertical-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  padding: 15px 0;
+}
+
+.vertical-title span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+  padding: 10px 0;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.accordion-item.active .vertical-title {
+  opacity: 0;
+}
+
+/* Expanded content (shown on active items) */
+.expanded-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: 4;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.accordion-item.active .expanded-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.expanded-content h3 {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  margin: 0 0 10px 0;
+}
+
+.expanded-content p {
+  color: white;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+
+/* Large screens (desktops, 1200px and up) */
+@media (max-width: 1400px) {
+  .accordion-container {
+    max-width: 1200px;
+  }
+  
+  .accordion-item.active {
+    flex: 0 0 500px;
+  }
+}
+
+/* Medium screens (laptops, 992px and up) */
+@media (max-width: 1200px) {
+  .accordion-container {
+    gap: 15px;
+    height: 500px;
+  }
+  
+  .accordion-item {
+    flex: 0 0 110px;
+    height: 450px;
+  }
+  
+  .accordion-item.active {
+    flex: 0 0 450px;
+  }
+  
+  .expanded-content h3 {
+    font-size: 1.6rem;
+  }
+  
+  .expanded-content p {
+    font-size: 0.95rem;
+  }
+  
+  .vertical-title span {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small screens (tablets, 768px and up) */
+@media (max-width: 992px) {
+  .accordion-container {
+    gap: 10px;
+    height: 450px;
+  }
+  
+  .accordion-item {
+    flex: 0 0 90px;
+    height: 400px;
+  }
+  
+  .accordion-item.active {
+    flex: 0 0 350px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .expanded-content h3 {
+    font-size: 1.4rem;
+  }
+  
+  .expanded-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .vertical-title span {
+    font-size: 1rem;
+    padding: 8px 0;
+  }
+  
+  .vertical-title {
+    width: 35px;
+  }
+}
+
+/* Mobile screens (768px and below) */
+@media (max-width: 768px) {
+  #Gallery {
+    padding: 40px 0;
+  }
+  
+  .accordion-container {
+    height: 350px;
+    gap: 8px;
+    padding: 10px;
+  }
+  
+  .accordion-item {
+    height: 300px;
+    flex: 0 0 80px;
+    min-width: 80px;
+  }
+  
+  .accordion-item.active {
+    flex: 0 0 260px;
+    transform: translateY(-5px);
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .expanded-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  
+  .expanded-content p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  .vertical-title {
+    width: 30px;
+  }
+  
+  .vertical-title span {
+    font-size: 0.9rem;
+    padding: 6px 0;
+  }
+  
+  .expanded-content {
+    padding: 15px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 576px) {
+  #Gallery {
+    padding: 30px 0;
+  }
+  
+  .accordion-container {
+    height: 300px;
+    gap: 5px;
+    padding: 10px 5px;
+  }
+  
+  .accordion-item {
+    height: 250px;
+    flex: 0 0 70px;
+    min-width: 70px;
+  }
+  
+  .accordion-item.active {
+    flex: 0 0 220px;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+    padding: 10px;
+  }
+  
+  h2::after {
+    width: 80px;
+  }
+  
+  .expanded-content {
+    padding: 10px;
+  }
+  
+  .expanded-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  
+  .expanded-content p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+  
+  .vertical-title {
+    width: 25px;
+  }
+  
+  .vertical-title span {
+    font-size: 0.8rem;
+    padding: 5px 0;
+  }
+}

@@ -1,0 +1,293 @@
+/* .overall-pricing{
+    background-color:rgb(255, 247, 237);
+}
+.abt-price{
+    text-align:center;
+    padding:20px;
+    font-size: 35px;
+}
+.pricing-table{
+    padding-bottom:20px;
+}
+table{
+    margin-top:3%;
+    border-collapse: collapse;
+    margin-left:15%;
+    text-align: center;
+    width:70%;
+    border:1px solid black;
+    margin-bottom:20px;
+}
+ th, td{
+    border:1px solid black;
+    padding:5px;
+}
+table th td{
+    border:1px solid black;
+}
+th{
+    padding-bottom:20px;
+    font-size:25px;
+    background-color: rgb(191, 234, 234);
+}
+td{
+    padding-left:20px;
+}
+td button{
+    margin-right:20px;
+}
+.rupees{
+    display:flex;
+}
+td p{
+    text-align: center;
+    margin-left:40px;
+}
+td button{
+    padding-top:10px;
+    margin-top:5px;
+    margin-bottom:5px;
+    padding-bottom:10px;
+    padding-left:10px;
+    padding-right:10px;
+    border-radius:20px;
+    cursor:pointer;
+}
+td button:hover{
+    background-color: rgb(186, 182, 182);;
+} */
+
+
+.overall-pricing {
+    background: linear-gradient(135deg, #fff7ed 0%, #fff1e6 100%);
+    padding: 50px 0;
+    font-family: 'Arial', sans-serif;
+}
+.enquire-btn{
+    color:white;
+}
+
+.abt-price {
+    text-align: center;
+    padding: 20px 15px 40px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.abt-price::after {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 3px;
+    background: linear-gradient(90deg, #ffb347, #99d554);
+    border-radius: 3px;
+}
+
+.pricing-table {
+    padding-bottom: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 90%;
+    max-width: 1000px;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    background-color: white;
+}
+
+th, td {
+    border: none;
+    padding: 16px 20px;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+th {
+    padding: 20px 10px;
+    font-size: 20px;
+    background: linear-gradient(90deg, #4ca1af, #487f89);
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+td {
+    font-size: 16px;
+    color: #555;
+    transition: background-color 0.3s ease;
+}
+
+tr:hover td {
+    background-color: #f9f9f9;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.rupees {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+td p {
+    text-align: center;
+    margin: 0;
+    font-weight: 500;
+    color: #333;
+}
+
+td button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border-radius: 50px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #4ca1af 0%, #3f8895 100%);
+    color: white;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 4px 10px rgba(76, 161, 175, 0.2);
+    transition: all 0.3s ease;
+}
+
+td button:hover {
+    background: linear-gradient(135deg, #3d8c9a 0%, #38717c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(76, 161, 175, 0.3);
+}
+
+/* Media Queries */
+@media screen and (max-width: 992px) {
+    table {
+        width: 95%;
+    }
+    
+    .abt-price {
+        font-size: 32px;
+    }
+    
+    th {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .abt-price {
+        font-size: 28px;
+        padding: 15px 10px 35px;
+    }
+    
+    .abt-price::after {
+        width: 60px;
+        bottom: 15px;
+    }
+    
+    th {
+        font-size: 16px;
+        padding: 15px 10px;
+    }
+    
+    td {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+    
+    td button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .overall-pricing {
+        padding: 30px 0;
+    }
+    
+    .abt-price {
+        font-size: 24px;
+        padding: 10px 10px 30px;
+    }
+    
+    table {
+        width: 100%;
+    }
+    
+    th {
+        font-size: 14px;
+        padding: 12px 8px;
+    }
+    
+    td {
+        padding: 10px 8px;
+        font-size: 14px;
+    }
+    
+    td button {
+        padding: 8px 12px;
+        margin: 5px 3px;
+        font-size: 13px;
+    }
+    
+    .rupees {
+        flex-direction: column;
+    }
+    
+    td p {
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    th {
+        font-size: 13px;
+        padding: 10px 6px;
+    }
+    
+    td {
+        padding: 8px 6px;
+        font-size: 13px;
+    }
+    
+    td button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+
+/* For extra small devices */
+@media screen and (max-width: 360px) {
+    .abt-price {
+        font-size: 22px;
+    }
+    
+    th {
+        font-size: 12px;
+        padding: 8px 5px;
+    }
+    
+    td {
+        padding: 8px 5px;
+        font-size: 12px;
+    }
+    
+    td button {
+        padding: 5px 8px;
+        font-size: 11px;
+    }
+}
