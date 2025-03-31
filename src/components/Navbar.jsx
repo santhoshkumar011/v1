@@ -43,24 +43,24 @@ const Navbar = () => {
       <ul className={`navbar-menu ${mobileMenuOpen ? "active" : ""}`}>
         <li>
           <Link 
-            to="AboutParandur" 
+            to="AboutArea" 
             smooth={true} 
             offset={-90} 
             duration={500}
             onClick={closeMenu}
           >
-            AboutArea
+            About Parandur Airport 
           </Link>
         </li>
         <li>
           <Link 
-            to="AboutMegacity" 
+            to="AboutPlot" 
             smooth={true} 
             offset={-90} 
             duration={600}
             onClick={closeMenu}
           >
-            AboutPlot
+            ABOUT MEGACITY
           </Link>
         </li>
         <li>
@@ -71,7 +71,7 @@ const Navbar = () => {
             duration={500}
             onClick={closeMenu}
           >
-            Gallery
+            Highlights
           </Link>
         </li>
         <li>
@@ -83,6 +83,17 @@ const Navbar = () => {
             onClick={closeMenu}
           >
             Pricing
+          </Link>
+        </li>
+        <li>
+          <Link 
+            to="LocationForm" 
+            smooth={true} 
+            offset={-90} 
+            duration={700}
+            onClick={closeMenu}
+          >
+            Location
           </Link>
         </li>
       </ul>
