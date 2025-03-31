@@ -59,7 +59,7 @@ const Location = () => {
 
     L.marker([12.946895, 79.673360], { icon: customIcon })
       .addTo(mapInstanceRef.current)
-      .bindPopup("Rajalakshmi Engineering College")
+      .bindPopup("Airport Megacity")
       .openPopup();
   }, []);
 
