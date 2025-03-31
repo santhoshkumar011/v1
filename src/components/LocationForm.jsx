@@ -3,6 +3,10 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "../css/LocationForm.css";  
 
+// Import marker icon images
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
+
 const LocationForm = () => {
   const mapContainerRef = useRef(null);
   const mapInstanceRef = useRef(null);
@@ -27,10 +31,20 @@ const LocationForm = () => {
       maxZoom: 19,
     }).addTo(mapInstanceRef.current);
 
-    // Add marker
-    L.marker([12.946895, 79.673360])
+    // Define custom marker icon
+    const customIcon = L.icon({
+      iconUrl: markerIcon,
+      shadowUrl: markerShadow,
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41],
+    });
+
+    // Add marker with custom icon
+    L.marker([12.946895, 79.673360], { icon: customIcon })
       .addTo(mapInstanceRef.current)
-      .bindPopup("Rajalakshmi Engineering College")
+      .bindPopup("Airport Megacity")
       .openPopup();
 
     // Cleanup function to remove map instance on unmount
