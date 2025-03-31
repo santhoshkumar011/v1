@@ -15,6 +15,14 @@ const LocationForm = () => {
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [isValid, setIsValid] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formErrors, setFormErrors] = useState({});
+  const [formTouched, setFormTouched] = useState(false);
+  const [fieldsTouched, setFieldsTouched] = useState({
+    uname: false,
+    email: false,
+    mobile: false
+  });
 
   useEffect(() => {
     if (!mapContainerRef.current || mapInstanceRef.current) return;
@@ -57,19 +65,113 @@ const LocationForm = () => {
   }, []);
 
   useEffect(() => {
-    setIsValid(uname.trim() !== "" && email.trim() !== "" && mobile.trim() !== "");
+    validateForm();
   }, [uname, email, mobile]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!isValid) return;
+  const validateForm = () => {
+    const errors = {};
     
-    console.log({ uname, email, mobile });
+    if (!uname.trim()) {
+      errors.uname = "Name is required";
+    }
+    
+    if (!email.trim()) {
+      errors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      errors.email = "Email is invalid";
+    }
+    
+    if (!mobile.trim()) {
+      errors.mobile = "Mobile number is required";
+    } else if (!/^\d{10}$/.test(mobile)) {
+      errors.mobile = "Mobile number must be 10 digits";
+    }
+    
+    setFormErrors(errors);
+    setIsValid(Object.keys(errors).length === 0);
+    
+    return Object.keys(errors).length === 0;
+  };
 
-    // Reset form fields
-    setUname("");
-    setEmail("");
-    setMobile("");
+  const handleFieldChange = (field, value) => {
+    // Update the field value
+    switch (field) {
+      case 'uname':
+        setUname(value);
+        break;
+      case 'email':
+        setEmail(value);
+        break;
+      case 'mobile':
+        setMobile(value);
+        break;
+      default:
+        break;
+    }
+    
+    // Mark the field as touched
+    setFieldsTouched(prev => ({
+      ...prev,
+      [field]: true
+    }));
+    
+    // Mark the form as touched if not already
+    if (!formTouched) {
+      setFormTouched(true);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Mark all fields as touched when submitting
+    setFieldsTouched({
+      uname: true,
+      email: true,
+      mobile: true
+    });
+    setFormTouched(true);
+    
+    if (!validateForm()) return;
+    
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch("https://v1-be.onrender.com/api/enquire", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ uname, email, mobile }),
+      });
+
+      if (response.ok) {
+        // Reset form fields on success
+        setUname("");
+        setEmail("");
+        setMobile("");
+        setFieldsTouched({
+          uname: false,
+          email: false,
+          mobile: false
+        });
+        setFormTouched(false);
+        alert("Thank you for your enquiry. We will contact you soon!");
+      } else {
+        const errorData = await response.json();
+        alert(`Submission failed: ${errorData.error || "Please try again later."}`);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Only show error for a field if it's been touched or form submitted
+  const shouldShowError = (field) => {
+    return (fieldsTouched[field] || formTouched) && formErrors[field];
   };
 
   return (
@@ -82,33 +184,48 @@ const LocationForm = () => {
       <div className="form-container">
         <h2 className="section-title">Contact Us</h2>
         <form onSubmit={handleSubmit}>
-          <input 
-            type="text" 
-            placeholder="Your Name" 
-            value={uname} 
-            onChange={(e) => setUname(e.target.value)} 
-            required 
-          />
-          <input 
-            type="email" 
-            placeholder="Your Email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            required 
-          />
-          <input 
-            type="tel" 
-            placeholder="Your Mobile Number" 
-            value={mobile} 
-            onChange={(e) => setMobile(e.target.value)} 
-            required 
-          />
+          <div className="form-group">
+            <input 
+              type="text" 
+              placeholder="Your Name" 
+              value={uname} 
+              onChange={(e) => handleFieldChange('uname', e.target.value)} 
+              className={shouldShowError('uname') ? "error" : ""}
+              disabled={isSubmitting}
+            />
+            {shouldShowError('uname') && <small className="error-message">{formErrors.uname}</small>}
+          </div>
+          
+          <div className="form-group">
+            <input 
+              type="email" 
+              placeholder="Your Email" 
+              value={email} 
+              onChange={(e) => handleFieldChange('email', e.target.value)} 
+              className={shouldShowError('email') ? "error" : ""}
+              disabled={isSubmitting}
+            />
+            {shouldShowError('email') && <small className="error-message">{formErrors.email}</small>}
+          </div>
+          
+          <div className="form-group">
+            <input 
+              type="tel" 
+              placeholder="Your Mobile Number" 
+              value={mobile} 
+              onChange={(e) => handleFieldChange('mobile', e.target.value)} 
+              className={shouldShowError('mobile') ? "error" : ""}
+              disabled={isSubmitting}
+            />
+            {shouldShowError('mobile') && <small className="error-message">{formErrors.mobile}</small>}
+          </div>
+          
           <button 
             type="submit" 
-            className="submit-btn" 
-            disabled={!isValid}
+            className={`submit-btn ${isSubmitting ? "submitting" : ""}`}
+            disabled={!isValid || isSubmitting}
           >
-            Submit
+            {isSubmitting ? "Submitting..." : "Submit"}
           </button>
         </form>
       </div>
