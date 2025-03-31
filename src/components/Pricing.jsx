@@ -7,7 +7,7 @@ const Pricing = () => {
   return (
     <section id="Pricing">
       <div className="overall-pricing">
-        <h2 className="abt-price">ABOUT PRICING</h2>
+        <h2 className="abt-price">Pricing Table</h2>
         <div className="pricing-table">
           <table>
             <thead>
