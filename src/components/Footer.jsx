@@ -55,7 +55,7 @@ const Footer = () => {
         <div className="footer-links">
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Service</a>
-          <a href="/sitemap">Sitemap</a>
+          <a href="https://maps.app.goo.gl/TURPyNkrScVWbHK38">Sitemap</a>
         </div>
       </div>
     </footer>
