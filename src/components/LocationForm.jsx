@@ -34,7 +34,7 @@ import "leaflet/dist/leaflet.css"; // Ensure you import the Leaflet styles
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
-const LocationForm = () => {
+const Location = () => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
 
@@ -65,5 +65,5 @@ const LocationForm = () => {
 
   return <div ref={mapContainerRef} style={{ width: "100%", height: "500px" }} />;
 };
-export default LocationForm;
+export default Location;
 
