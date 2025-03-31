@@ -175,6 +175,7 @@ const LocationForm = () => {
   };
 
   return (
+    <div className="LocationForm">
     <div className="location-form-container">
       <div className="map-container">
         <h2 className="section-title">Location</h2>
@@ -229,6 +230,7 @@ const LocationForm = () => {
           </button>
         </form>
       </div>
+    </div>
     </div>
   );
 };
