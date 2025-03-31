@@ -102,4 +102,4 @@ const LocationForm = () => {
   );
 };
 
-export default LocationMap;
+export default LocationForm;
