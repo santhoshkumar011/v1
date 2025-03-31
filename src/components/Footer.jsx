@@ -18,11 +18,11 @@ const Footer = () => {
           </div>
           <div className="contact-item">
             <FaPhone className="icon" />
-            <p><a href="tel:9884075871">9884075871</a> </p>
+            <p><a href="tel:9884075871">+91 9884075871</a> </p>
           </div>
           <div className="contact-item">
             <FaPhone className="icon" />
-            <p><a href="tel:9884075871">9344843492</a></p>
+            <p><a href="tel:9884075871">+91 9344843492</a></p>
           </div>
           <div className="contact-item">
             <FaPhone className="icon" />
