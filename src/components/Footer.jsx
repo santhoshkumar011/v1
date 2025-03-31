@@ -14,11 +14,11 @@ const Footer = () => {
           <h3>Contact Information</h3>
           <div className="contact-item">
             <FaPhone className="icon" />
-            <p><a href="tel:9344843492">+91 9344843492</a></p>
+            <p><a href="tel:9884075861">+91 9884075861</a></p>
           </div>
           <div className="contact-item">
             <FaPhone className="icon" />
-            <p><a href="tel:044-46133361">044-46133361</a> (Support)</p>
+            <p><a href="tel:9884075871">9884075871</a> (Support)</p>
           </div>
           <div className="contact-item">
             <FaMapMarkerAlt className="icon" />
