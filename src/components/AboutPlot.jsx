@@ -1,6 +1,6 @@
 import "../css/AboutPlot.css"
 import img from "../assets/plot.jpg"
-import brochure from "../assets/Parandur.pdf"
+import brochure from "../assets/SRV DEVELOPERS Parandur Brouchure.pdf"
 import PropTypes from 'prop-types'
 
 
