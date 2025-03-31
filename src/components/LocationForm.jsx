@@ -1,4 +1,5 @@
 import L from "leaflet";
+import {useEffect} from "react";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
