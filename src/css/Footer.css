@@ -1,4 +1,3 @@
-/* Footer.css */
 .footer-container {
   background: linear-gradient(to right, #2e5e4e, #1d3c32); /* Earthy green gradient */
   color: #f8f9fa;
@@ -24,7 +23,7 @@
 }
 
 .footer-section h3 {
-  color: #8bc34a; /* Fresh green color for headings */
+  color: #8bc34a; 
   font-size: 1.3rem;
   margin-bottom: 20px;
   position: relative;
@@ -32,14 +31,32 @@
   font-weight: 600;
 }
 
-.footer-section h3::after {
+.contact-info h3::after {
   content: '';
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 50px;
+  width: 190px;
   height: 2px;
-  background-color: #8bc34a; /* Matching green underline */
+  background-color: #8bc34a;
+}
+.about h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 89px;
+  height: 2px;
+  background-color: #8bc34a;
+}
+.social-links h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 160px;
+  height: 2px;
+  background-color: #8bc34a;
 }
 
 .about p {

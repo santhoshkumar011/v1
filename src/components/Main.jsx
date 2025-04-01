@@ -74,13 +74,16 @@ const Main = () => {
     <section id="Main">
       <div className="main">
         <div className="plot-details">
+          <h3>CODE NAME</h3>
           <h2>AIRPORT MEGACITY</h2>
           <p>
             <MdConnectingAirports className="flight" />
             Near International Airport <span> </span>
             <FaHouse /> Villa Plots
           </p>
+          <hr></hr>
           <p>1800 Sq Ft Plots Starting from ₹1400/Sq Ft Onwards</p>
+          <hr></hr>
           <button onClick={() => window.location.href = "tel:9344843492"}>
             Call Now
           </button>
@@ -129,7 +132,17 @@ const Main = () => {
               />
               {errors.mobile && <small className="error-text">{errors.mobile}</small>}
             </div>
-
+            <div className="checkbox">
+            <div className="checkbox">
+              <label htmlFor="termsCheckbox">
+              <input type="checkbox" id="termsCheckbox" required />
+                I have read and understood the  
+                <a href="privacy-policy.html" target="_blank"> Privacy Policy</a>.  
+                By registering here, I agree to  
+                <a href="terms-conditions.html" target="_blank"> SRV Developer’s Terms & Conditions</a>.
+              </label>
+            </div>
+            </div>
             <button 
               type="submit" 
               disabled={isSubmitting} 

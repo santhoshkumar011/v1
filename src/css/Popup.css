@@ -1,0 +1,83 @@
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-form {
+    background: white;
+    padding: 20px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: red;
+}
+
+.popup-form input, .popup-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.checkbox input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.checkbox label {
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+.checkbox a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.checkbox a:hover {
+    text-decoration: underline;
+}
+
+/* Submit button styling */
+.popup-form button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.popup-form button:hover {
+    background: #218838;
+}

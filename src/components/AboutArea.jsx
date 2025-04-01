@@ -38,7 +38,7 @@ const AboutArea = () => {
   return (
     <section id="AboutArea">
       <div className="overall">
-        <h2 className="abt-area">About Parandur Airport</h2>
+        <h2 className="abt-area">About Parandur</h2>
         <div className="plot-content">
           {/* Left Side - Image */}
           <div className="map-view">
@@ -79,10 +79,10 @@ const AboutArea = () => {
             <RiUserCommunityFill className="icone" />
             <p>Excellent Connectivity</p>
           </li>
-          <li className="single-info">
+          {/* <li className="single-info">
             <RiCommunityLine className="icone" />
             <p>World-Class Amenities</p>
-          </li>
+          </li> */}
         </ul>
       </div>
     </section>

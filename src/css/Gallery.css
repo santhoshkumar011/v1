@@ -1,6 +1,6 @@
 /* Gallery Section */
 #Gallery {
-  background: linear-gradient(white, rgb(160, 237, 218), rgb(92, 97, 139));
+  background: linear-gradient(white, rgb(160, 237, 218),white);
   padding: 60px 0;
   position: relative;
   overflow: hidden;

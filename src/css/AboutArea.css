@@ -1,6 +1,6 @@
 .overall {
     width: 100%;
-    background: linear-gradient(azure,white);
+    background: linear-gradient(azure,rgb(228, 212, 212),white);
     padding: 50px 0;
     display: flex;
     flex-direction: column;
