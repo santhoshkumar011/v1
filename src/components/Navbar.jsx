@@ -1,5 +1,5 @@
 import "../css/Navbar.css";
-import logo from "../assets/4.png";
+import logo from "../assets/loogo.png";
 import logo1 from "../assets/5.png";
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
@@ -32,7 +32,7 @@ const Navbar = () => {
     <nav className={`container navbar ${scroll ? "scroll-down" : ""}`}>
      <div className="navbar-logo-container">
       <img className="navbar-logo" src={logo} alt="Logo" />
-      <img className="navbar-logo" src={logo1} alt="Logo" />
+      {/* <img className="navbar-logo" src={logo1} alt="Logo" /> */}
     </div>
 
       
