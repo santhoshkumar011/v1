@@ -1,5 +1,6 @@
 import "../css/Navbar.css";
-import logo from "../assets/3.png";
+import logo from "../assets/4.png";
+import logo1 from "../assets/5.png";
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 
@@ -29,7 +30,11 @@ const Navbar = () => {
 
   return (
     <nav className={`container navbar ${scroll ? "scroll-down" : ""}`}>
+     <div className="navbar-logo-container">
       <img className="navbar-logo" src={logo} alt="Logo" />
+      <img className="navbar-logo" src={logo1} alt="Logo" />
+    </div>
+
       
       <div 
         className={`mobile-menu-toggle ${mobileMenuOpen ? "active" : ""}`} 
@@ -60,7 +65,7 @@ const Navbar = () => {
             duration={600}
             onClick={closeMenu}
           >
-            ABOUT MEGACITY
+            About Megacity
           </Link>
         </li>
         <li>

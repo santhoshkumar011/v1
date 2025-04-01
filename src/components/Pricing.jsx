@@ -41,6 +41,17 @@ const Pricing = () => {
                     </a>
                   </button></td>
               </tr>
+              <tr>
+                <td>Plots</td>
+                <td>1000 Sq-Ft - 1800 Sq-Ft</td>
+                <td><p className="rupees"><LiaRupeeSignSolid />1400/SqFt</p></td>
+                <td>
+                  <button>  
+                    <a href="https://wa.me/919994459458" className="enquire-btn">
+                      Enquire Now
+                    </a>
+                  </button></td>
+              </tr>
             </tbody>
           </table>
         </div>
