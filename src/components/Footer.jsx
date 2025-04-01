@@ -1,4 +1,5 @@
 import "../css/Footer.css";
+import logo from "../assets/loogo.png"
 import { FaEnvelope, FaWhatsapp, FaInstagram, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 const Footer = () => {
@@ -8,6 +9,7 @@ const Footer = () => {
         <div className="footer-section about">
           <h3>About Us</h3>
           <p>We are committed to providing exceptional service and innovative solutions to meet your needs.</p>
+          <img className="fotlogo" src={logo} alt="logo" />
         </div>
         
         <div className="footer-section contact-info">

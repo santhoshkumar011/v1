@@ -49,6 +49,10 @@
   height: 2px;
   background-color: #8bc34a;
 }
+.fotlogo{
+  width:150px;
+  height:100px;
+}
 .social-links h3::after {
   content: '';
   position: absolute;

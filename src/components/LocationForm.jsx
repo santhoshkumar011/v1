@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import L from "leaflet";
-import "leaflet/dist/leaflet.css";
+import "leaflet/dist/leaflet.css"
+import PrivacyPolicy from "./PrivacyPolicy";
 import "../css/LocationForm.css";  
 
 // Import marker icon images
@@ -8,6 +9,8 @@ import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
 const LocationForm = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   const mapContainerRef = useRef(null);
   const mapInstanceRef = useRef(null);
 
@@ -23,6 +26,13 @@ const LocationForm = () => {
     email: false,
     mobile: false
   });
+  const openPopup = (e) => {
+    e.preventDefault();
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => setIsPopupOpen(false);
+
 
   useEffect(() => {
     if (!mapContainerRef.current || mapInstanceRef.current) return;
@@ -222,26 +232,35 @@ const LocationForm = () => {
           </div>
           <div className="checkbox">
             <label for="termsCheckbox">
-            <input type="checkbox" id="termsCheckbox" required/>
+          <input type="checkbox" id="termsCheckbox" required/>
                 I have read and understood the 
-                <a href="privacy-policy.html" target="_blank">Privacy Policy</a>. 
-                By registering here, I agree to 
-                <a href="terms-conditions.html" target="_blank">SRV Developer’s Terms & Conditions</a>.
+                <a href="#" onClick={openPopup}>Privacy Policy</a>. 
+                By registering here, I agree to SRV Developer’s 
+                <a href="#" onClick={openPopup}> Terms & Conditions</a>.
             </label>
             </div>
           
           <button 
             type="submit" 
             className={`submit-btn ${isSubmitting ? "submitting" : ""}`}
-            disabled={!isValid || isSubmitting}
+            // disabled={!isValid || isSubmitting}
           >
             {isSubmitting ? "Submitting..." : "Submit"}
           </button>
         </form>
       </div>
     </div>
+    {isPopupOpen && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <button className="close-popup" onClick={closePopup}>×</button>
+            <PrivacyPolicy />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default LocationForm;
+
