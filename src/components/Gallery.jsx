@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../css/Gallery.css";
 import img1 from "../assets/pic1.jpg";
 import img2 from "../assets/investment.jpg";
-import img3 from "../assets/Metro.jpg";
+import img3 from "../assets/metro.jpg";
 import img4 from "../assets/commercial_hub.jpg";
 import img5 from "../assets/transportation.jpg";
 
