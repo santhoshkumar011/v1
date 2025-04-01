@@ -43,7 +43,7 @@ const Pricing = () => {
               </tr>
               <tr>
                 <td>Plots</td>
-                <td>1000 Sq-Ft - 1800 Sq-Ft</td>
+                <td>1800 Sq-Ft - 3000 Sq-Ft</td>
                 <td><p className="rupees"><LiaRupeeSignSolid />1400/SqFt</p></td>
                 <td>
                   <button>  
