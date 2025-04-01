@@ -187,12 +187,12 @@ h2::after {
 
 @media (max-width: 480px) {
   .accordion-container {
-    height: 280px;
+    height: 350px;
     gap: 6px;
     overflow-x: auto;
   }
   .accordion-item {
-    height: 240px;
+    height: 330px;
     flex: 0 0 75px;
   }
   .accordion-item:hover {
@@ -202,12 +202,12 @@ h2::after {
 
 @media (max-width: 320px) {
   .accordion-container {
-    height: 320px;
+    height: 340px;
     gap: 5px;
     overflow-x: auto;
   }
   .accordion-item {
-    height: 290px;
+    height: 330px;
     flex: 0 0 70px;
   }
   .accordion-item:hover {
