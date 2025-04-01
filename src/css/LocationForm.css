@@ -8,32 +8,6 @@
   position: relative;
   z-index: 1; /* Lower z-index than navbar */
 }
-.checkbox{
-  margin-top:10px;
-  font-size: small;
-  display: flex;
-  align-items: flex-start; 
-  gap: 10px;
-  font-family: Arial, sans-serif;
-  max-width: 600px; 
-}
-
-.checkbox input {
-  margin-top: 10px; 
-}
-.checkbox input:hover {
-  margin-top: 3px; 
-  cursor:pointer;
-}
-
-.checkbox a {
-  color: blue;
-  text-decoration: none;
-}
-
-.checkbox a:hover {
-  text-decoration: underline;
-}
 .map-container, .form-container {
   flex: 1;
   min-width: 300px;
@@ -76,6 +50,7 @@
 
 .form-container input {
   padding: 12px;
+  width: 50%;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
@@ -97,9 +72,9 @@
   cursor: not-allowed;
 }
 
-.submit-btn:hover:not(:disabled) {
+/* .submit-btn:hover:not(:disabled) {
   transform: scale(1.05);
-}
+} */
 
 .section-title {
   font-size: 24px;
