@@ -1,5 +1,5 @@
 #Gallery {
-  background: linear-gradient(135deg, rgb(160, 237, 218), rgb(92, 97, 139));
+  background: linear-gradient(white, rgb(160, 237, 218), rgb(92, 97, 139));
   padding: 60px 0;
   position: relative;
   overflow: hidden;
