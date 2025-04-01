@@ -1,6 +1,5 @@
 import "../css/Navbar.css";
 import logo from "../assets/loogo.png";
-import logo1 from "../assets/5.png";
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 
@@ -32,10 +31,7 @@ const Navbar = () => {
     <nav className={`container navbar ${scroll ? "scroll-down" : ""}`}>
      <div className="navbar-logo-container">
       <img className="navbar-logo" src={logo} alt="Logo" />
-      {/* <img className="navbar-logo" src={logo1} alt="Logo" /> */}
-    </div>
-
-      
+    </div>  
       <div 
         className={`mobile-menu-toggle ${mobileMenuOpen ? "active" : ""}`} 
         onClick={toggleMobileMenu}
@@ -54,7 +50,7 @@ const Navbar = () => {
             duration={500}
             onClick={closeMenu}
           >
-            About Parandur Airport 
+            About Parandur
           </Link>
         </li>
         <li>

@@ -188,7 +188,7 @@ const LocationForm = () => {
           <div className="form-group">
             <input 
               type="text" 
-              placeholder="Your Name" 
+              placeholder="Name" 
               value={uname} 
               onChange={(e) => handleFieldChange('uname', e.target.value)} 
               className={shouldShowError('uname') ? "error" : ""}
@@ -200,7 +200,7 @@ const LocationForm = () => {
           <div className="form-group">
             <input 
               type="email" 
-              placeholder="Your Email" 
+              placeholder="Email" 
               value={email} 
               onChange={(e) => handleFieldChange('email', e.target.value)} 
               className={shouldShowError('email') ? "error" : ""}
@@ -212,7 +212,7 @@ const LocationForm = () => {
           <div className="form-group">
             <input 
               type="tel" 
-              placeholder="Your Mobile Number" 
+              placeholder="Mobile Number" 
               value={mobile} 
               onChange={(e) => handleFieldChange('mobile', e.target.value)} 
               className={shouldShowError('mobile') ? "error" : ""}
@@ -220,6 +220,15 @@ const LocationForm = () => {
             />
             {shouldShowError('mobile') && <small className="error-message">{formErrors.mobile}</small>}
           </div>
+          <div className="checkbox">
+            <label for="termsCheckbox">
+            <input type="checkbox" id="termsCheckbox" required/>
+                I have read and understood the 
+                <a href="privacy-policy.html" target="_blank">Privacy Policy</a>. 
+                By registering here, I agree to 
+                <a href="terms-conditions.html" target="_blank">SRV Developer’s Terms & Conditions</a>.
+            </label>
+            </div>
           
           <button 
             type="submit" 

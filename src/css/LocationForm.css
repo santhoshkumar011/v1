@@ -8,7 +8,32 @@
   position: relative;
   z-index: 1; /* Lower z-index than navbar */
 }
+.checkbox{
+  margin-top:10px;
+  font-size: small;
+  display: flex;
+  align-items: flex-start; 
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  max-width: 600px; 
+}
 
+.checkbox input {
+  margin-top: 10px; 
+}
+.checkbox input:hover {
+  margin-top: 3px; 
+  cursor:pointer;
+}
+
+.checkbox a {
+  color: blue;
+  text-decoration: none;
+}
+
+.checkbox a:hover {
+  text-decoration: underline;
+}
 .map-container, .form-container {
   flex: 1;
   min-width: 300px;
